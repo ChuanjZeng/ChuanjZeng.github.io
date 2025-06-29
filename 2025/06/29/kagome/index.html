@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>计算莫尔势下高填充数导致的晶格自组织 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="LDOS smooth预处理-更好的看出形状（potentialwell.py）框出一个周期（莫尔势的superlattice） -&gt; fit_potential_wellsmoothed_z contourf(smoothed_z)temp &#x3D; smoothed_z(x1 : x2, y1 : y2)半径取小会更接近三角形拟合势阱函数 plot_V.py 画出拟合的势函数hubb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算莫尔势下高填充数导致的晶格自组织">
+<meta property="og:url" content="http://example.com/2025/06/29/kagome/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="LDOS smooth预处理-更好的看出形状（potentialwell.py）框出一个周期（莫尔势的superlattice） -&gt; fit_potential_wellsmoothed_z contourf(smoothed_z)temp &#x3D; smoothed_z(x1 : x2, y1 : y2)半径取小会更接近三角形拟合势阱函数 plot_V.py 画出拟合的势函数hubb">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-29T03:33:53.000Z">
+<meta property="article:modified_time" content="2025-06-29T03:41:02.014Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="DMRG">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-kagome" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/06/29/kagome/" class="article-date">
+  <time class="dt-published" datetime="2025-06-29T03:33:53.000Z" itemprop="datePublished">2025-06-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%8C%E7%BB%B4%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97/">二维材料计算</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      计算莫尔势下高填充数导致的晶格自组织
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="LDOS-smooth预处理-更好的看出形状（potentialwell-py）"><a href="#LDOS-smooth预处理-更好的看出形状（potentialwell-py）" class="headerlink" title="LDOS smooth预处理-更好的看出形状（potentialwell.py）"></a>LDOS smooth预处理-更好的看出形状（potentialwell.py）</h1><h1 id="框出一个周期（莫尔势的superlattice）-fit-potential-well"><a href="#框出一个周期（莫尔势的superlattice）-fit-potential-well" class="headerlink" title="框出一个周期（莫尔势的superlattice） -&gt; fit_potential_well"></a>框出一个周期（莫尔势的superlattice） -&gt; fit_potential_well</h1><p>smoothed_z contourf(smoothed_z)<br>temp &#x3D; smoothed_z(x1 : x2, y1 : y2)<br>半径取小会更接近三角形<br>拟合势阱函数</p>
+<h1 id="plot-V-py-画出拟合的势函数"><a href="#plot-V-py-画出拟合的势函数" class="headerlink" title="plot_V.py 画出拟合的势函数"></a>plot_V.py 画出拟合的势函数</h1><h1 id="hubbard模型加势场进行DMRG计算"><a href="#hubbard模型加势场进行DMRG计算" class="headerlink" title="hubbard模型加势场进行DMRG计算"></a>hubbard模型加势场进行DMRG计算</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/06/29/kagome/" data-id="cmchdsh4h0000cosz3sttdhtp" data-title="计算莫尔势下高填充数导致的晶格自组织" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DMRG/" rel="tag">DMRG</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/06/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bedtime-stories/">Bedtime-stories</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%8C%E7%BB%B4%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97/">二维材料计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/">热力学与统计物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DMRG/" rel="tag">DMRG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%87%E5%AE%99%E8%B5%B7%E6%BA%90/" rel="tag">宇宙起源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6/" rel="tag">热力学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" rel="tag">热力学与统计物理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" rel="tag">统计物理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DMRG/" style="font-size: 10px;">DMRG</a> <a href="/tags/%E5%AE%87%E5%AE%99%E8%B5%B7%E6%BA%90/" style="font-size: 10px;">宇宙起源</a> <a href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6/" style="font-size: 10px;">热力学</a> <a href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" style="font-size: 10px;">热力学与统计物理</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" style="font-size: 10px;">统计物理</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/06/29/kagome/">计算莫尔势下高填充数导致的晶格自组织</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/24/talking-phase-transition/">谈谈相变</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/24/story001/">世界外面的企鹅🐧</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/24/trans/">世界外面的企鹅🐧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

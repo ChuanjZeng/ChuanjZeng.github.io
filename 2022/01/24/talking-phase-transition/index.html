@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>谈谈相变 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="0 初衷&emsp;&emsp;这是我第一篇正儿八经的博客，所以想在这里记录一下我写博客的初衷。   &emsp;&emsp;最初我不愿意写博客，因为我没有什么要写给别人看的东西。“寻找一个写东西的地方”那时候并不是一个强烈的需求。 &emsp;&emsp;后来有一天早上起来，我所在的地方下了一场不小的雪。我喜欢走在路上贼眉鼠眼地观察周围的东西，我发现，地上没有积雪，但草地上有，树上和灌木丛上有，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈相变">
+<meta property="og:url" content="http://example.com/2022/01/24/talking-phase-transition/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="0 初衷&emsp;&emsp;这是我第一篇正儿八经的博客，所以想在这里记录一下我写博客的初衷。   &emsp;&emsp;最初我不愿意写博客，因为我没有什么要写给别人看的东西。“寻找一个写东西的地方”那时候并不是一个强烈的需求。 &emsp;&emsp;后来有一天早上起来，我所在的地方下了一场不小的雪。我喜欢走在路上贼眉鼠眼地观察周围的东西，我发现，地上没有积雪，但草地上有，树上和灌木丛上有，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/01/24/talking-phase-transition/tracktube.jpg">
+<meta property="article:published_time" content="2022-01-24T13:06:16.000Z">
+<meta property="article:modified_time" content="2022-02-12T15:27:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="热力学与统计物理">
+<meta property="article:tag" content="热力学">
+<meta property="article:tag" content="统计物理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/01/24/talking-phase-transition/tracktube.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-talking-phase-transition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/24/talking-phase-transition/" class="article-date">
+  <time class="dt-published" datetime="2022-01-24T13:06:16.000Z" itemprop="datePublished">2022-01-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/">热力学与统计物理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      谈谈相变
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="0-初衷"><a href="#0-初衷" class="headerlink" title="0 初衷"></a>0 初衷</h1><p>&emsp;&emsp;这是我第一篇正儿八经的博客，所以想在这里记录一下我写博客的初衷。  </p>
+<p>&emsp;&emsp;最初我不愿意写博客，因为我没有什么要写给别人看的东西。“寻找一个写东西的地方”那时候并不是一个强烈的需求。</p>
+<p>&emsp;&emsp;后来有一天早上起来，我所在的地方下了一场不小的雪。我喜欢走在路上贼眉鼠眼地观察周围的东西，我发现，地上没有积雪，但草地上有，树上和灌木丛上有，操场的塑胶跑道和塑胶草地上也有。那时正在学热力学与统计物理。事实上，大一上学期我已经学过热力学的基本课程，但学得并不好，期末只是勉强及格。但我的热力学与统计物理的老师讲课正好是我喜欢的风格，使我从那时起对热力学和统计物理产生了浓厚的兴趣。从操场看完雪回宿舍的路上我就想，我要研究研究为什么地上不容易积雪，而在树上容易积雪，并且写成一篇文章。  </p>
+<p>&emsp;&emsp;值得一提的是，我确实产生了一些有价值的想法。 </p>
+<p>&emsp;&emsp;那几天我所在的城市有疫情，操场的塑胶草地上摆放着道次筒，用来标记做核酸检测的队伍。</p>
+<center>
+
+<p><img src="/2022/01/24/talking-phase-transition/tracktube.jpg" alt="我所说的道次筒就是这个东西"></p>
+</center>
+
+<p>&emsp;&emsp;道筒的顶部有一个直径约12cm的洞。我想，雪从顶部那个洞里落下去，会形成一团圆圆的积雪吗？可是当我把道筒提起来，却发现下面是一片没有积雪的草地，包括那个洞对应的草地。我想，如果我需要让一个场地没有积雪但我并不在乎它是否有微微的湿润，或许我可以设计一种屋顶，上面每隔一定距离就打一个这样的小洞，这样一定能节省不少材料！ </p>
+<p>&emsp;&emsp;话说回来，我需要找个地方写我这篇关于雪的融化的文章。可是在公共平台我总是扭捏，因为感觉立刻会被很多人看到，（虽然好像不太有这种可能），我是个完美主义者，如果立刻接受指指点点，我会非常难受。我需要一个地方先试试自己，然后再拿给陌生人看，至少那时候我有点心理准备。就这样，拖拖拉拉，直到大二的寒假快要结束，也就是现在，我搭建起了这个秘密基地。  </p>
+<h1 id="1-相变的热力学过程"><a href="#1-相变的热力学过程" class="headerlink" title="1 相变的热力学过程"></a>1 相变的热力学过程</h1><p>&emsp;&emsp;雪融化的问题，也就是相变的问题。研究热力学过程，简单来说，就是研究系统的温度 $(T)$,压强$(P)$ ,体积$(V)$,熵$(S)$,自由能$(F)$,焓$(H)$,内能$(U)$,吉布斯函数$(G)$,这八个宏观参量在热力学过程中的变化规律。首先我们要说明什么是相变，然后研究相变的热力学过程。  </p>
+<h2 id="1-1-什么是相变？"><a href="#1-1-什么是相变？" class="headerlink" title="1.1 什么是相变？"></a>1.1 什么是相变？</h2><p>&emsp;&emsp;什么是相？</p>
+<p>&emsp;&emsp;“假设一个系统是由一种物质均匀组成，拥有均匀的物理与化学性质，则称这系统只具有一种相（Phase）。这是一种简单的系统，称为均相系统。更复杂的系统可能在某方面不均匀，这类系统称为非均相系统。在做分析时，可以将非均相系统分为几个系统，每个系统都只具有一种相，都是均相系统。例如，经过仔细搅和后的溶液是均相系统，只具有一种相。又例如，在一个装有水和冰块的玻璃杯所组成的非均相系统中，水是一种相、冰块也是一种相，水上方的潮湿空气是另一种相，而玻璃杯又是另外一种相。每一种相都是一种物质状态；但相和物质状态不同，在同一种物质状态中，可能会存在一种以上彼此不混溶的相。相有时会用来描述由相图上的相边界划分出来的一组平衡状态；在这里，相边界是由像压力、温度一类的状态变数设定。相边界很重要地关联到在它两边的两种相所对比出的性质差异。例如，由液体变成固体、由某一种晶体结构变为另一种晶体结构。”(引用自维基百科)  </p>
+<p>&emsp;&emsp;相变，就是一种相变成另一种相。  </p>
+<h2 id="1-2-定性谈谈相变"><a href="#1-2-定性谈谈相变" class="headerlink" title="1.2 定性谈谈相变"></a>1.2 定性谈谈相变</h2><p>&emsp;&emsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/24/talking-phase-transition/" data-id="cmchdsh4n0005cosz28qogtz4" data-title="谈谈相变" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6/" rel="tag">热力学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" rel="tag">热力学与统计物理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" rel="tag">统计物理</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/06/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/01/24/story001/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">世界外面的企鹅🐧</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bedtime-stories/">Bedtime-stories</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%8C%E7%BB%B4%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97/">二维材料计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/">热力学与统计物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DMRG/" rel="tag">DMRG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%87%E5%AE%99%E8%B5%B7%E6%BA%90/" rel="tag">宇宙起源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6/" rel="tag">热力学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" rel="tag">热力学与统计物理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" rel="tag">统计物理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DMRG/" style="font-size: 10px;">DMRG</a> <a href="/tags/%E5%AE%87%E5%AE%99%E8%B5%B7%E6%BA%90/" style="font-size: 10px;">宇宙起源</a> <a href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6/" style="font-size: 10px;">热力学</a> <a href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" style="font-size: 10px;">热力学与统计物理</a> <a href="/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" style="font-size: 10px;">统计物理</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/06/29/kagome/">计算莫尔势下高填充数导致的晶格自组织</a>
+          </li>
+        
+          <li>
+            <a href="/2025/06/28/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/24/talking-phase-transition/">谈谈相变</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/24/story001/">世界外面的企鹅🐧</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/24/trans/">世界外面的企鹅🐧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
